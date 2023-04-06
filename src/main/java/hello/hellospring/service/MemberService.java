@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     private final MemberRepository memberRepository;
@@ -21,7 +22,7 @@ public class MemberService {
     /**
      * 회원 가입
      */
-    @Transactional
+
     public Long join(Member member) {
 
         validateDuplicateMember(member); //중복 회원 검증
